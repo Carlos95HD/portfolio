@@ -48,26 +48,6 @@ function toggleSkills() {
 skillsHeader.forEach((el)=> {
   el.addEventListener('click', toggleSkills)
 })
-/*==================== QUALIFICATION TABS ====================*/
-const tabs = document.querySelectorAll('[data-target]'),
-      tabContents = document.querySelectorAll('[data-content]')
-
-tabs.forEach(tab => {
-  tab.addEventListener('click', () => {
-    const target = document.querySelector(tab.dataset.target)
-
-    tabContents.forEach(tabContent => {
-      tabContent.classList.remove('qualification__active')
-    })
-    target.classList.add('qualification__active')
-
-    tabs.forEach(tab => {
-      tab.classList.remove('qualification__active')
-    })
-
-    tab.classList.add('qualification__active')
-  })
-})
 
 /*==================== SERVICES MODAL ====================*/
 const modalViews = document.querySelectorAll('.services__modal'),
@@ -141,6 +121,7 @@ function scrollActive(){
         }
     })
 }
+window.addEventListener('scroll', scrollActive)
 
 /*==================== CHANGE BACKGROUND HEADER ====================*/ 
 function scrollHeader(){
@@ -200,4 +181,36 @@ if(userPrefersDark && localStorage.getItem("selected-theme") === null){
     // Add icon theme
     localStorage.setItem('selected-icon', 'uil-sun')
     themeButton.classList.toggle(iconTheme)
+}
+
+//E-mail encrypt
+const mail = document.querySelector('#contact__mailto')
+mail.addEventListener('click', () => {
+  openMailer(mail)
+})
+
+function decode(a) {
+  return a.replace(/[a-zA-Z]/g, function(c){
+    return String.fromCharCode((c <= "Z" ? 90 : 122) >= (c = c.charCodeAt(0) + 13) ? c : c - 26);
+  })
+}; 
+function openMailer(element) {
+  let y = decode("znvygb:ureanaqrnfv7@tznvy.pbz");
+  element.setAttribute("href", y);
+  element.setAttribute("onclick", "");
+  element.firstChild.nodeValue = "Se abrió el programa de correo";
+  setTimeout(() => {
+    element.firstChild.nodeValue = "Click aqui";
+  }, 5000);
+  
+};
+
+
+//tooltip hidden in touch
+function isTouchDevice(){
+  return true == ("ontouchstart" in window || window.DocumentTouch && document instanceof DocumentTouch);
+}
+
+if (isTouchDevice()!==false) {
+  document.querySelectorAll('.tooltiptext').forEach(txt => txt.style.display = 'none');
 }

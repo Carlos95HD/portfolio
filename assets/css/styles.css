@@ -136,6 +136,35 @@ img{
   height: auto;
 }
 
+/* tooltip */
+.tooltip { 
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 50px;
+  background-color: var(--first-color);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  position: absolute;
+  z-index: 1;
+  top: -100%;
+  margin-right: -60px;
+  transition: 300ms;
+  opacity: 0.1;
+}
+
+.tooltip:hover .tooltiptext {
+  opacity: 1; 
+  transition: 0.3s;
+  transition-delay: 0.1s;
+  visibility: visible;
+}
 /*==================== REUSABLE CSS CLASSES ====================*/
 .section{
   padding: 2rem 0 4rem;
@@ -526,13 +555,13 @@ img{
 
 .language__logo-img{
   width: 70px;
-  filter: grayscale(100%);
-  transition: all 500ms;
+  /* filter: grayscale(100%); */
+  /* transition: all 500ms; */
 }
 
-.language__logo-img:hover{
-  filter: grayscale(0%); 
-}
+/* .language__logo-img:hover{
+  filter: grayscale(0%);
+} */
 
 .skills__close .skills__list{
   height: 0;
@@ -561,9 +590,9 @@ img{
   cursor: pointer;
 }
 
-.qualification__button:hover{
+/* .qualification__button:hover{
   color:var(--first-color)
-}
+} */
 
 .qualification__icon{
   font-size: 1.8rem;
@@ -579,6 +608,11 @@ img{
 .qualification__title{
   font-size: var(--normal-font-size);
   font-weight: var(--font-medium);
+}
+
+.watch__icon{
+  color: var(--first-color);
+  font-size: 16px;
 }
 
 .qualification__subtitle{
@@ -620,105 +654,6 @@ img{
   color: var(--first-color)
 }
 
-/*==================== SERVICES ====================*/
-.services__container{
-  gap: 1.5rem;
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.services__content{
-  position: relative;
-  background-color: var(--container-color);
-  padding: 3.5rem .5rem 1.25rem 1.5rem;
-  border-radius: .25rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, .15);
-  transition: .3s;
-}
-
-.services.__content:hover{
-  box-shadow: 0 4px 8px rgba(0,0,0,.15)
-}
-
-.services__icon{
-  display: block;
-  font-size: 1.5rem;
-  color: var(--first-color);
-  margin-bottom: var(var(--mb-1));
-}
-
-.services__title{
-  font-size: var(--h3-font-size);
-  margin-bottom: var(--mb-1);
-  font-weight: var(--font-medium);
-}
-
-.services__button{
-  cursor: pointer;
-  font-size: var(--small-font-size);
-}
-
-.services__button:hover .button__icon{
-  transform: translateX(.25rem);
-}
-
-.services__modal{
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color:rgba(0, 0, 0, .5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding:0 1rem;
-  z-index: var(--z-modal);
-  opacity: 0;
-  visibility:hidden;
-  transition: .3s;
-}
-
-.services__modal-content{
-  position: relative;
-  background-color: var(--container-color);
-  padding: 1.5rem;
-  border-radius: .5rem;
-}
-
-.services__modal-services{
-  row-gap: 1rem;
-}
-
-.services__modal-service{
-  display: flex;
-}
-
-.services__modal-title{
-  font-size: var(--h3-font-size);
-  font-weight: var(--font-medium);
-  margin-bottom: var(--mb-1-5)
-}
-
-.services__modal-close{
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  font-size: 1.5rem;
-  color: var(--first-color);
-  cursor: pointer;
-}
-
-.services__modal-icon{
-  color: var(--first-color);
-  margin-right: var(--mb-0-25);
-}
-
-/* Active Modal */
-.active-modal{
-  opacity: 1;
-  visibility: visible;
-}
-
 /*==================== PORTFOLIO ====================*/
 .portfolio__container{
   overflow: initial;
@@ -731,7 +666,7 @@ img{
 .portfolio__img{
   width: 265px;
   border-radius: .5rem;
-  justify-self: center; 
+  justify-self: center;
 }
 
 .portfolio__title{
@@ -783,75 +718,16 @@ img{
   outline: none;
 }
 
-/*==================== PROJECT IN MIND ====================*/
-
-.project{
-  text-align: center;
-}
-
-.project__bg{
-  background-color: var(--first-color);
-  padding-top: 3rem;
-}
-
-.project__title{
-  font-size: var(--h2-font-size);
-  margin-bottom: var(--mb-0-75);
-}
-
-.project__description{
-  margin-bottom: var(--mb-1-5);
-}
-
-.project__title,
-.project__description{
-  color: #FFF;
-}
-
-.project__img{
-  width: 232px;
-  justify-self: center;
-}
-
-/*==================== TESTIMONIAL ====================*/
-
-.testimonial_data,
-.testimonial__header{
-  display: flex;
-}
-
-.testimonial__data{
-  justify-content: space-between;
-  margin-bottom: var(--mb-1);
-}
-
-.testimonial__img{
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  margin-right: var(--mb-0-75)
-}
-
-.testimonial__name{
-  font-size: var(--h3-font-size);
-  font-weight: var(--font-medium);
-}
-
-.testimonial__client{
-  font-size: var(--small-font-size);
-  color: var(--text-color-light);
-}
-
-.testimonial__description{
-  margin-bottom: var(--mb-2-5);
-}
-
-.testimonial__icon-star{
+.portfolio__git-icon{
   color: var(--first-color);
+  font-size: 2.25rem;
+  vertical-align: middle;
+  margin-left: var(--mb-0-5);
+  transition: .3s;
 }
 
-.swiper-container .swiper-pagination-testimonial{
-  bottom:0;
+.portfolio__git-icon:hover {
+  color: var(--first-color-alt)
 }
 
 /*==================== CONTACT ME ====================*/
@@ -1046,7 +922,6 @@ img{
     width: 200px;
   }
 
-  
   .testimonial__data,
   .testimonial__header{
     flex-direction: column;
@@ -1295,7 +1170,11 @@ img{
   .contact__form{
     width: 460px;
   }
-  .contact__inputs{
+  /* .contact__inputs{
     grid-template-columns: repeat(2, 1fr);
+  } */
+
+  .scrollup__icon {
+    font-size: 2rem;
   }
 }
