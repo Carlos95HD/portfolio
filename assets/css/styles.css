@@ -136,6 +136,10 @@ img{
   height: auto;
 }
 
+textarea{
+  resize: vertical;
+}
+
 /* tooltip */
 .tooltip { 
   position: relative;
@@ -535,6 +539,16 @@ img{
   transition: .4s;
 }
 
+.current__study{
+  grid-column-start: 1;
+  grid-column-end: 4;
+  margin-bottom: -20px;
+  /* text-decoration: underline; */
+}
+.current__study h3{
+  color: var(--first-color);
+}
+
 .skills__list{
   row-gap: 1.5rem;
   /* padding-left: 2.7rem; */
@@ -772,6 +786,111 @@ img{
   border:none;
   outline:none;
   padding: .25rem .5rem .5rem 0;
+}
+
+.input__success{
+  border: 0px;
+}
+
+.input__error{
+  border-bottom: 1px solid rgb(255, 100, 100);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid var(--input-color);
+  -webkit-text-fill-color: var(--text-color);
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.enviar__enabled{
+  transition: 0.2s;
+  transition-delay: 0.1s;
+  cursor: pointer;
+  opacity: 1;
+  border: 0px solid var(--first-color);
+}
+
+.enviar__disabled{
+  transition: 0.2s;
+  transition-delay: 0.1s;
+  cursor: not-allowed;
+  opacity: 0.5;
+  border: 0;
+}
+
+#enviar span{
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+.error{
+  color: rgb(255, 100, 100);
+}
+
+.div__send {
+  display: flex;
+}
+
+.exit{
+  color: #fff;
+  justify-self: center;
+  background-color: hsl(142, 100%, 35%);
+  border-radius: .5rem;
+  padding: 1rem;
+}
+
+/*==================== SPINNER ====================*/
+
+.spinner {
+  padding: 19px;
+  padding-left: 0px;
+  display: none;
+  align-self: center;
+  text-align: center;
+}
+
+.spinner > div {
+  width: 18px;
+  height: 18px;
+  background-color: var(--first-color);
+
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% { 
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  } 40% { 
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+  }
 }
 
 /*==================== FOOTER ====================*/

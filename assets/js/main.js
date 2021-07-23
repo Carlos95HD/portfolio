@@ -214,3 +214,126 @@ function isTouchDevice(){
 if (isTouchDevice()!==false) {
   document.querySelectorAll('.tooltiptext').forEach(txt => txt.style.display = 'none');
 }
+
+
+/*==================== FORM VALIDATION ====================*/
+const btnEnviar = document.querySelector("#enviar");
+const formulario = document.querySelector("#send-mail");
+
+//Variables para campos
+const email = document.querySelector("#email");
+const nombre = document.querySelector("#name");
+const mensaje = document.querySelector("#message");
+
+const er = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+evenListenerForm()
+
+function evenListenerForm() {
+  document.addEventListener('DOMContentLoaded', startApp);
+  email.addEventListener('blur', validarFormulario);
+  nombre.addEventListener('blur', validarFormulario);
+  mensaje.addEventListener('blur', validarFormulario);
+  formulario.addEventListener('submit', enviarEmail);
+}
+
+function startApp() {
+  disabledBtn();
+}
+
+//Valida Formulario
+function validarFormulario(e) {
+
+  if (e.target.value.length > 0) {
+      //quitando errores
+      const error = document.querySelector('p.error');
+      if ( error ) {
+          error.remove();
+      }
+      e.target.parentElement.classList.remove('input__error');
+      e.target.parentElement.classList.add('input__success');
+      
+  } else {
+      e.target.parentElement.classList.remove('input__success');
+      e.target.parentElement.classList.add('input__error');
+
+      mostrarError("Todos los campos son obligatorios");
+      disabledBtn();
+  }
+
+  if (e.target.type === "email") {
+      
+      if (er.test( e.target.value ) ) {
+          
+          const error = document.querySelector('p.error');
+          if ( error ) {
+              error.remove();
+          }
+                  
+          e.target.parentElement.classList.remove('input__error');
+          e.target.parentElement.classList.add('input__success');
+  
+      } else {
+        e.target.parentElement.classList.remove('input__success');
+        e.target.parentElement.classList.add('input__error');
+          mostrarError("Email no válido");
+          disabledBtn();
+      }
+  }
+
+  if (er.test(email.value) && (nombre.value !== '') && (mensaje.value !== '')) {
+      btnEnviar.disabled = false;
+      btnEnviar.classList.remove('enviar__disabled');
+      btnEnviar.classList.add('enviar__enabled');
+  }
+}
+
+function mostrarError(mensaje) {
+  const mensajeError = document.createElement('p')
+  
+  mensajeError.textContent = mensaje;
+  mensajeError.classList.add('error');
+  
+  const errores = document.querySelectorAll('.error')
+  if ( errores.length === 0) {
+      formulario.appendChild(mensajeError);
+  }
+
+}
+
+const disabledBtn = () => {
+  btnEnviar.disabled = true;
+  btnEnviar.classList.add('enviar__disabled');
+}
+
+function enviarEmail(e) {
+  e.preventDefault();
+  //Mostrar el spinner
+  const spinner = document.querySelector('.spinner');
+  const parrafo = document.createElement('p');
+  btnEnviar.style.display = 'none';
+  spinner.style.display = 'flex';
+
+  //Despues de 3 segundos ocultar el spinner y mostrar el mensaje
+  setTimeout( () => {
+      spinner.style.display = 'none';
+      parrafo.textContent = 'Mensaje Enviado!';
+      parrafo.classList.add('exit');
+      btnEnviar.parentElement.appendChild(parrafo, spinner);
+      formulario.reset()
+
+      setTimeout(()=> {
+          btnEnviar.style.display = 'block';
+          parrafo.remove();
+          disabledBtn()
+      },4000);
+
+      
+  }, 3000);
+
+}
+
+function resetearFormulario(e) {
+  formulario.reset();
+  e.preventDefault();
+}
