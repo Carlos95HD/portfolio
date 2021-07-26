@@ -219,7 +219,6 @@ if (isTouchDevice()!==false) {
 /*==================== FORM VALIDATION ====================*/
 const btnEnviar = document.querySelector("#enviar");
 const formulario = document.querySelector("#send-mail");
-
 //Variables para campos
 const email = document.querySelector("#email");
 const nombre = document.querySelector("#name");
@@ -234,16 +233,18 @@ function evenListenerForm() {
   email.addEventListener('blur', validarFormulario);
   nombre.addEventListener('blur', validarFormulario);
   mensaje.addEventListener('blur', validarFormulario);
-  formulario.addEventListener('submit', enviarEmail);
+  formulario.addEventListener('submit', enviarEmail);  
 }
 
 function startApp() {
   disabledBtn();
 }
 
-//Valida Formulario
-function validarFormulario(e) {
 
+let validReCaptcha = false;
+let validFormulario = false;
+
+function validarFormulario(e) {
   if (e.target.value.length > 0) {
       //quitando errores
       const error = document.querySelector('p.error');
@@ -281,12 +282,27 @@ function validarFormulario(e) {
       }
   }
 
-  if (er.test(email.value) && (nombre.value !== '') && (mensaje.value !== '')) {
+  if (er.test(email.value) && (nombre.value !== '') && (mensaje.value !== '') && (validReCaptcha) ) {
       btnEnviar.disabled = false;
       btnEnviar.classList.remove('enviar__disabled');
       btnEnviar.classList.add('enviar__enabled');
+  } else if ((er.test(email.value) && (nombre.value !== '') && (mensaje.value !== ''))) {
+    validFormulario = true;
   }
 }
+
+//ReCaptcha
+var onReCaptcha = function () {
+  console.log(grecaptcha.getResponse().length)
+  if (grecaptcha.getResponse().length !== 0) {
+    validReCaptcha = true;
+    if (validFormulario) {
+      btnEnviar.disabled = false;
+      btnEnviar.classList.remove('enviar__disabled');
+      btnEnviar.classList.add('enviar__enabled');
+    }
+  }
+};
 
 function mostrarError(mensaje) {
   const mensajeError = document.createElement('p')
@@ -306,34 +322,41 @@ const disabledBtn = () => {
   btnEnviar.classList.add('enviar__disabled');
 }
 
-function enviarEmail(e) {
+async function enviarEmail(e) {
   e.preventDefault();
-  //Mostrar el spinner
   const spinner = document.querySelector('.spinner');
   const parrafo = document.createElement('p');
+
   btnEnviar.style.display = 'none';
   spinner.style.display = 'flex';
 
-  //Despues de 3 segundos ocultar el spinner y mostrar el mensaje
-  setTimeout( () => {
-      spinner.style.display = 'none';
-      parrafo.textContent = 'Mensaje Enviado!';
-      parrafo.classList.add('exit');
-      btnEnviar.parentElement.appendChild(parrafo, spinner);
-      formulario.reset()
+  const form = new FormData(this)
+  const response = await fetch(this.action, {
+    method: this.method,
+    body: form,
+    headers: {
+      'Accept': 'application/json'
+    }
+  })
+  if (response.ok) {
 
-      setTimeout(()=> {
-          btnEnviar.style.display = 'block';
-          parrafo.remove();
-          disabledBtn()
-      },4000);
+    spinner.style.display = 'none';
+    parrafo.textContent = 'Mensaje Enviado!';
+    parrafo.classList.add('exit');
+    btnEnviar.parentElement.appendChild(parrafo, spinner);
+    formulario.reset()
 
-      
-  }, 3000);
+    setTimeout(()=> {
+      btnEnviar.style.display = 'block';
+      parrafo.remove();
+      disabledBtn()
+  },4000);
 
+  }
 }
 
 function resetearFormulario(e) {
   formulario.reset();
   e.preventDefault();
 }
+

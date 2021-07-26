@@ -839,6 +839,10 @@ select:-webkit-autofill:focus {
   display: flex;
 }
 
+/* .g-recaptcha{
+  margin-left: 10px;
+} */
+
 .exit{
   color: #fff;
   justify-self: center;
