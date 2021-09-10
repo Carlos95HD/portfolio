@@ -1,3 +1,4 @@
+
 /*==================== MENU SHOW Y HIDDEN ====================*/
 const navMenu = document.querySelector('#nav-menu'),
   navToggle = document.querySelector('#nav-toggle'),
@@ -37,7 +38,7 @@ const skillsContent = document.getElementsByClassName('skills__content'),
 function toggleSkills() {
   let itemClass = this.parentNode.className
 
-  for (i = 0; i < skillsContent.length; i++) {
+  for (let i = 0; i < skillsContent.length; i++) {
     skillsContent[i].className = 'skills__content skills__close'
   }
 
@@ -48,6 +49,19 @@ function toggleSkills() {
 skillsHeader.forEach((el)=> {
   el.addEventListener('click', toggleSkills)
 })
+
+//Skills time
+const frontend = document.querySelector('.skills_subtitle_frontend')
+const backend = document.querySelector('.skills_subtitle_backend')
+const tools = document.querySelector('.skills_subtitle_tools')
+
+frontend.innerHTML = `${capitalizeFirstLetter(moment("20200810", "YYYYMMDD").fromNow())}`
+backend.innerHTML = `${capitalizeFirstLetter(moment("20210621", "YYYYMMDD").fromNow())}`
+tools.innerHTML = `${capitalizeFirstLetter(moment("20200810", "YYYYMMDD").fromNow())}`
+
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
 /*==================== SERVICES MODAL ====================*/
 const modalViews = document.querySelectorAll('.services__modal'),
@@ -112,7 +126,7 @@ function scrollActive(){
     sections.forEach(current =>{
         const sectionHeight = current.offsetHeight
         const sectionTop = current.offsetTop - 50;
-        sectionId = current.getAttribute('id')
+        const sectionId = current.getAttribute('id')
 
         if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
             document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link')
@@ -223,6 +237,7 @@ const formulario = document.querySelector("#send-mail");
 const email = document.querySelector("#email");
 const nombre = document.querySelector("#name");
 const mensaje = document.querySelector("#message");
+const asunto = document.querySelector("#asunto")
 
 const er = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
@@ -233,6 +248,7 @@ function evenListenerForm() {
   email.addEventListener('blur', validarFormulario);
   nombre.addEventListener('blur', validarFormulario);
   mensaje.addEventListener('blur', validarFormulario);
+  asunto.addEventListener("blur", validarFormulario);
   formulario.addEventListener('submit', enviarEmail);  
 }
 
@@ -241,7 +257,7 @@ function startApp() {
 }
 
 
-let validReCaptcha = false;
+// let validReCaptcha = false;
 let validFormulario = false;
 
 function validarFormulario(e) {
@@ -282,7 +298,7 @@ function validarFormulario(e) {
       }
   }
 
-  if (er.test(email.value) && (nombre.value !== '') && (mensaje.value !== '') && (validReCaptcha) ) {
+  if ( er.test(email.value) && (nombre.value !== '') && (mensaje.value !== '') ) {
       btnEnviar.disabled = false;
       btnEnviar.classList.remove('enviar__disabled');
       btnEnviar.classList.add('enviar__enabled');
@@ -292,17 +308,17 @@ function validarFormulario(e) {
 }
 
 //ReCaptcha
-var onReCaptcha = function () {
-  console.log(grecaptcha.getResponse().length)
-  if (grecaptcha.getResponse().length !== 0) {
-    validReCaptcha = true;
-    if (validFormulario) {
-      btnEnviar.disabled = false;
-      btnEnviar.classList.remove('enviar__disabled');
-      btnEnviar.classList.add('enviar__enabled');
-    }
-  }
-};
+// var onReCaptcha = function () {
+//   console.log(grecaptcha.getResponse().length)
+//   if (grecaptcha.getResponse().length !== 0) {
+//     validReCaptcha = true;
+//     if (validFormulario) {
+//       btnEnviar.disabled = false;
+//       btnEnviar.classList.remove('enviar__disabled');
+//       btnEnviar.classList.add('enviar__enabled');
+//     }
+//   }
+// };
 
 function mostrarError(mensaje) {
   const mensajeError = document.createElement('p')
@@ -322,41 +338,20 @@ const disabledBtn = () => {
   btnEnviar.classList.add('enviar__disabled');
 }
 
-async function enviarEmail(e) {
+function enviarEmail () {
   e.preventDefault();
-  const spinner = document.querySelector('.spinner');
-  const parrafo = document.createElement('p');
-
-  btnEnviar.style.display = 'none';
-  spinner.style.display = 'flex';
-
-  const form = new FormData(this)
-  const response = await fetch(this.action, {
-    method: this.method,
-    body: form,
-    headers: {
-      'Accept': 'application/json'
-    }
+  let myForm = document.getElementById("form");
+  let formData = new FormData(myForm);
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(formData).toString(),
   })
-  if (response.ok) {
-
-    spinner.style.display = 'none';
-    parrafo.textContent = 'Mensaje Enviado!';
-    parrafo.classList.add('exit');
-    btnEnviar.parentElement.appendChild(parrafo, spinner);
-    formulario.reset()
-
-    setTimeout(()=> {
-      btnEnviar.style.display = 'block';
-      parrafo.remove();
-      disabledBtn()
-  },4000);
-
-  }
-}
+    .then(() => console.log("Form successfully submitted"))
+    .catch((error) => alert(error));
+};
 
 function resetearFormulario(e) {
   formulario.reset();
   e.preventDefault();
 }
-

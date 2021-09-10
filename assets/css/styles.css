@@ -635,6 +635,10 @@ textarea{
   margin-bottom: var(--mb-1);
 }
 
+.qualification__subtitle a{
+  color: var(--body-font);
+}
+
 .qualification__calendar{
   font-size: var(--small-font-size);
   color: var(--text-color-light);
@@ -839,9 +843,11 @@ select:-webkit-autofill:focus {
   display: flex;
 }
 
-/* .g-recaptcha{
-  margin-left: 10px;
-} */
+.hidden{
+    width: 20px;
+    position: absolute;
+    visibility: hidden;
+}
 
 .exit{
   color: #fff;
@@ -1172,6 +1178,11 @@ select:-webkit-autofill:focus {
   .about__img{
     width: 350px;
   }
+
+  .about__data{
+    align-self: center;
+  }
+
   .about__description{
     text-align: initial;
   }
@@ -1293,9 +1304,9 @@ select:-webkit-autofill:focus {
   .contact__form{
     width: 460px;
   }
-  /* .contact__inputs{
+  .contact__inputs{
     grid-template-columns: repeat(2, 1fr);
-  } */
+  } 
 
   .scrollup__icon {
     font-size: 2rem;
