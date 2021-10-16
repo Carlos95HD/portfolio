@@ -591,6 +591,11 @@ textarea{
   transform: rotate(-180deg);
 }
 
+.react_logo{
+  grid-column-start: 2;
+  margin-top: 10px;
+}
+
 /*==================== QUALIFICATION ====================*/
 .qualification__tabs{
   display: flex;
