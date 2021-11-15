@@ -6,7 +6,7 @@
     --header-height: 3rem;
     /*========== Colors ==========*/
     /* Change color */
-    --hue-color: 220; /*Purple 250 - Green 142 - Blue 230 - Pink 340 - lightyellow 40 */
+    --hue-color: 40; /*Purple 250 - Green 142 - Blue 230 - Pink 340 - lightyellow 40 */
 
     /* HSL color mode */
     --first-color: hsl(var(--hue-color), 69%, 61%);
