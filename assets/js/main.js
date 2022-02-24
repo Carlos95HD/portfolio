@@ -51,13 +51,13 @@ skillsHeader.forEach((el)=> {
 })
 
 //Skills time
-const frontend = document.querySelector('.skills_subtitle_frontend')
-const backend = document.querySelector('.skills_subtitle_backend')
-const tools = document.querySelector('.skills_subtitle_tools')
+// const frontend = document.querySelector('.skills_subtitle_frontend')
+// const backend = document.querySelector('.skills_subtitle_backend')
+// const tools = document.querySelector('.skills_subtitle_tools')
 
-frontend.innerHTML = `${capitalizeFirstLetter(moment("20200810", "YYYYMMDD").fromNow())}`
-backend.innerHTML = `${capitalizeFirstLetter(moment("20210621", "YYYYMMDD").fromNow())}`
-tools.innerHTML = `${capitalizeFirstLetter(moment("20200810", "YYYYMMDD").fromNow())}`
+// frontend.innerHTML = `${capitalizeFirstLetter(moment("20200810", "YYYYMMDD").fromNow())}`
+// backend.innerHTML = `${capitalizeFirstLetter(moment("20210621", "YYYYMMDD").fromNow())}`
+// tools.innerHTML = `${capitalizeFirstLetter(moment("20200810", "YYYYMMDD").fromNow())}`
 
 function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
@@ -102,21 +102,21 @@ let swiperPortfolio = new Swiper(".porfolio__container", {
 });
 
 /*==================== TESTIMONIAL ====================*/
-let swiperTestimonial = new Swiper(".testimonial__container", {
-  loop: true,
-  grabCursor:true,
-  spaceBetween:48,
+// let swiperTestimonial = new Swiper(".testimonial__container", {
+//   loop: true,
+//   grabCursor:true,
+//   spaceBetween:48,
 
-  pagination: {
-    el: ".swiper-pagination",
-    clickable:true,
-  },
-  breakpoints:{
-    568:{
-      slidesPerView: 2,
-    }
-  },
-});
+//   pagination: {
+//     el: ".swiper-pagination",
+//     clickable:true,
+//   },
+//   breakpoints:{
+//     568:{
+//       slidesPerView: 2,
+//     }
+//   },
+// });
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 const sections = document.querySelectorAll('section[id]')
 
@@ -212,7 +212,7 @@ function openMailer(element) {
   let y = decode("znvygb:ureanaqrnfv7@tznvy.pbz");
   element.setAttribute("href", y);
   element.setAttribute("onclick", "");
-  element.firstChild.nodeValue = "Se abrió el programa de correo";
+  element.firstChild.nodeValue = "Se abrirá la app de email";
   setTimeout(() => {
     element.firstChild.nodeValue = "Click aqui";
   }, 5000);

@@ -6,7 +6,7 @@
     --header-height: 3rem;
     /*========== Colors ==========*/
     /* Change color */
-    --hue-color: 40; /*Purple 250 - Green 142 - Blue 230 - Pink 340 - lightyellow 40 */
+    --hue-color: 230; /*Purple 250 - Green 142 - Blue 230 - Pink 340 - lightyellow 40 */
 
     /* HSL color mode */
     --first-color: hsl(var(--hue-color), 69%, 61%);
@@ -957,7 +957,9 @@ select:-webkit-autofill:focus {
 .footer__copy{
   font-size: var(--smaller-font-size);
   text-align: center;
-  color: var(--text-color-light);
+  /* color: var(--text-color-light); */
+  color: #fff;
+  cursor:default;
   margin-top: var(--mb-3);
 }
 
