@@ -32,36 +32,27 @@ function linkAction(){
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
 /*==================== ACCORDION SKILLS ====================*/
-const skillsContent = document.getElementsByClassName('skills__content'),
-      skillsHeader = document.querySelectorAll('.skills__header')
+// const skillsContent = document.getElementsByClassName('skills__content'),
+//       skillsHeader = document.querySelectorAll('.skills__header')
 
-function toggleSkills() {
-  let itemClass = this.parentNode.className
+// function toggleSkills() {
+//   let itemClass = this.parentNode.className
 
-  for (let i = 0; i < skillsContent.length; i++) {
-    skillsContent[i].className = 'skills__content skills__close'
-  }
+//   for (let i = 0; i < skillsContent.length; i++) {
+//     skillsContent[i].className = 'skills__content skills__close'
+//   }
 
-  if(itemClass === 'skills__content skills__close') {
-    this.parentNode.className = 'skills__content skills__open'
-  }
-}
-skillsHeader.forEach((el)=> {
-  el.addEventListener('click', toggleSkills)
-})
+//   if(itemClass === 'skills__content skills__close') {
+//     this.parentNode.className = 'skills__content skills__open'
+//   }
+// }
+// skillsHeader.forEach((el)=> {
+//   el.addEventListener('click', toggleSkills)
+// })
 
-//Skills time
-// const frontend = document.querySelector('.skills_subtitle_frontend')
-// const backend = document.querySelector('.skills_subtitle_backend')
-// const tools = document.querySelector('.skills_subtitle_tools')
-
-// frontend.innerHTML = `${capitalizeFirstLetter(moment("20200810", "YYYYMMDD").fromNow())}`
-// backend.innerHTML = `${capitalizeFirstLetter(moment("20210621", "YYYYMMDD").fromNow())}`
-// tools.innerHTML = `${capitalizeFirstLetter(moment("20200810", "YYYYMMDD").fromNow())}`
-
-function capitalizeFirstLetter(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
-}
+// function capitalizeFirstLetter(string) {
+//   return string.charAt(0).toUpperCase() + string.slice(1);
+// }
 
 /*==================== SERVICES MODAL ====================*/
 const modalViews = document.querySelectorAll('.services__modal'),

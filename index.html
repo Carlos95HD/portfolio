@@ -41,6 +41,13 @@
               <i class="uil uil-user nav__icon"></i> Acerca
             </a>
           </li>
+
+          <li class="nav__item">
+            <a href="#portfolio" class="nav__link">
+              <i class="uil uil-scenery nav__icon"></i> Portafolio
+            </a>
+          </li>
+
           <li class="nav__item">
             <a href="#skills" class="nav__link">
               <i class="uil uil-file-alt nav__icon"></i> Skills
@@ -53,11 +60,6 @@
             </a>
           </li>
 
-          <li class="nav__item">
-            <a href="#portfolio" class="nav__link">
-              <i class="uil uil-scenery nav__icon"></i> Portafolio
-            </a>
-          </li>
           <li class="nav__item">
             <a href="#contact" class="nav__link">
               <i class="uil uil-message nav__icon"></i> Contacto
@@ -129,13 +131,13 @@
           </div>
         </div>
 
-        <div class='home__scroll'>
+        <!-- <div class='home__scroll'>
           <a href="#about" class="home__scroll-button button--flex">
             <i class="uil uil-mouse-alt home__scroll-mouse"></i>
             <span class='home__scroll-name'>Scroll down</span>
             <i class="uil uil-arrow-down home__scroll-arrow"></i>
           </a>
-        </div>
+        </div> -->
       </div>
     </section>
 
@@ -164,14 +166,98 @@
 
     </section>
 
+    <!--==================== PORTFOLIO ====================-->
+
+    <section class="portfolio section" id="portfolio">
+      <h2 class='section__title'>Portafolio</h2>
+      <span class='section__subtitle'>Proyectos recientes</span>
+
+      <div class="porfolio__container container swiper-container">
+        <div class="swiper-wrapper">
+          <!--==================== PORTFOLIO 1 ====================-->
+          <div class="portfolio__content grid swiper-slide">
+            <img src="assets/img/portfolio/2.jpg" alt="" class="portfolio__img">
+
+            <div class="portfolio__data">
+              <h3 class="portfolio__title">Juego de Preguntas</h3>
+              <p class="portfolio__description">
+                Proyecto final realizado en el Informatorio.
+                Tecnologias utilizadas: TailwindCSS, JavaScript, Django, SQL.
+              </p>
+              <a href="https://pregunchacoapp.herokuapp.com/" target="_blank" class="button button--flex button--small portfolio__button">
+                Demo
+                <i class="uil uil-arrow-right button__icon"></i>
+              </a>
+              <a href="https://github.com/Carlos95HD/pregunchaco-app" target="_blank" class="portfolio__git-icon">
+                <i class="uil uil-github"></i>
+              </a>
+            </div>
+          </div>
+          <!--==================== PORTFOLIO 2 ====================-->
+          <div class="portfolio__content grid swiper-slide">
+            <img src="assets/img/portfolio/1.jpg" alt="" class="portfolio__img img-w">
+
+            <div class="portfolio__data">
+              <h3 class="portfolio__title">Consulta de Clima Actual</h3>
+              <p class="portfolio__description">
+                Consultas realizadas a la API OpenWeather.
+                Tecnologias utililzadas: TailwindCSS, JavaScript.
+              </p>
+
+              <a href="https://clima-deasi.netlify.app/" target="_blank"
+                class="button button--flex button--small portfolio__button">
+                Demo
+                <i class="uil uil-arrow-right button__icon"></i>
+              </a>
+              <a href="https://github.com/Carlos95HD/weather-project" target="_blank" class="portfolio__git-icon">
+                <i class="uil uil-github"></i>
+              </a>
+            </div>
+          </div>
+          <!--==================== PORTFOLIO 3 ====================-->
+          <div class="portfolio__content grid swiper-slide">
+            <img src="assets/img/portfolio/3.jpg" alt="" class="portfolio__img">
+
+            <div class="portfolio__data">
+              <h3 class="portfolio__title">Rastreador de direcciones IP</h3>
+              <p class="portfolio__description">
+                Web realizada con diferentes API's
+                Tecnologias utilizadas: React, TailwindCSS.
+              </p>
+              <a href="https://carlos95hd.github.io/ip-address-tracker" target="_blank"
+               class="button button--flex button--small portfolio__button">
+                Demo
+                <i class="uil uil-arrow-right button__icon"></i>
+              </a>
+              <a href="https://github.com/Carlos95HD/ip-address-tracker" target="_blank" class="portfolio__git-icon">
+                <i class="uil uil-github"></i>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- arrow -->
+        <div class="swiper-button-next">
+          <i class="uil uil-angle-right swiper-portfolio-icon"></i>
+        </div>
+        <div class="swiper-button-prev">
+          <i class="uil uil-angle-left swiper-portfolio-icon"></i>
+        </div>
+        <!-- pagination -->
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+
     <!--==================== SKILLS ====================-->
     <section class="skills section" id="skills">
       <h2 class="section__title">Skills</h2>
       <span class="section__subtitle">Tecnologías</span>
       <div class="skills__container container">
-        <div>
+        <div class="skills__wrapper">
           <!--==================== SKILLS FRONTEND ====================-->
-          <div class="skills__content skills__close">
+          <!-- <div class="skills__content skills__close"> -->
+          <div class="skills__content">
             <div class="skills__header">
               <i class="uil uil-brackets-curly skills__icon"></i>
 
@@ -180,7 +266,7 @@
                 <span class="skills_subtitle_frontend"></span>
               </div>
 
-              <i class="uil uil-angle-down skills__arrow"></i>
+              <!-- <i class="uil uil-angle-down skills__arrow"></i> -->
             </div>
 
             <div class="skills__list grid">
@@ -257,7 +343,7 @@
             </div>
           </div>
           <!--==================== SKILLS BACKEND ====================-->
-          <div class="skills__content skills__close">
+          <div class="skills__content">
             <div class="skills__header">
               <i class="uil uil-server-network skills__icon"></i>
 
@@ -265,8 +351,6 @@
                 <h1 class="skills__titles">Desarrollo Backend</h1>
                 <span class="skills_subtitle_backend"></span>
               </div>
-
-              <i class="uil uil-angle-down skills__arrow"></i>
             </div>
 
 
@@ -316,7 +400,7 @@
             </div>
           </div>
           <!--==================== SKILLS TOOLS ====================-->
-          <div class="skills__content skills__close">
+          <div class="skills__content">
             <div class="skills__header">
               <i class="uil uil-wrench skills__icon"></i>
 
@@ -324,8 +408,6 @@
                 <h1 class="skills__titles">Herramientas</h1>
                 <span class="skills_subtitle_tools"></span>
               </div>
-
-              <i class="uil uil-angle-down skills__arrow"></i>
             </div>
 
             <div class="skills__list grid">
@@ -346,15 +428,15 @@
 
               <div class="skills__data">
                 <div class="skills__titles">
-                  <img src="assets/img/skills/tools/vscode.svg" class="language__logo-img" alt="">
-                  <h3 class="skills__name">Visual Studio Code</h3>
+                  <img src="assets/img/skills/tools/postman.svg" class="language__logo-img" alt="">
+                  <h3 class="skills__name">Postman</h3>
                 </div>
               </div>
 
               <div class="skills__data">
                 <div class="skills__titles">
-                  <img src="assets/img/skills/tools/postman.svg" class="language__logo-img" alt="">
-                  <h3 class="skills__name">Postman</h3>
+                  <img src="assets/img/skills/tools/vscode.svg" class="language__logo-img" alt="">
+                  <h3 class="skills__name">Visual Studio Code</h3>
                 </div>
               </div>
 
@@ -553,88 +635,6 @@
         </div>
 
     </section>
-    <!--==================== PORTFOLIO ====================-->
-
-    <section class="portfolio section" id="portfolio">
-      <h2 class='section__title'>Portafolio</h2>
-      <span class='section__subtitle'>Proyectos recientes</span>
-
-      <div class="porfolio__container container swiper-container">
-        <div class="swiper-wrapper">
-          <!--==================== PORTFOLIO 1 ====================-->
-          <div class="portfolio__content grid swiper-slide">
-            <img src="assets/img/portfolio/2.jpg" alt="" class="portfolio__img">
-
-            <div class="portfolio__data">
-              <h3 class="portfolio__title">Juego de Preguntas</h3>
-              <p class="portfolio__description">
-                Proyecto final realizado en el Informatorio.
-                Tecnologias utilizadas: TailwindCSS, JavaScript, Django, SQL.
-              </p>
-              <a href="https://pregunchacoapp.herokuapp.com/" target="_blank" class="button button--flex button--small portfolio__button">
-                Demo
-                <i class="uil uil-arrow-right button__icon"></i>
-              </a>
-              <a href="https://github.com/Carlos95HD/pregunchaco-app" target="_blank" class="portfolio__git-icon">
-                <i class="uil uil-github"></i>
-              </a>
-            </div>
-          </div>
-          <!--==================== PORTFOLIO 2 ====================-->
-          <div class="portfolio__content grid swiper-slide">
-            <img src="assets/img/portfolio/1.jpg" alt="" class="portfolio__img img-w">
-
-            <div class="portfolio__data">
-              <h3 class="portfolio__title">Consulta de Clima Actual</h3>
-              <p class="portfolio__description">
-                Consultas realizadas a la API OpenWeather.
-                Tecnologias utililzadas: TailwindCSS, JavaScript.
-              </p>
-
-              <a href="https://clima-deasi.netlify.app/" target="_blank"
-                class="button button--flex button--small portfolio__button">
-                Demo
-                <i class="uil uil-arrow-right button__icon"></i>
-              </a>
-              <a href="https://github.com/Carlos95HD/weather-project" target="_blank" class="portfolio__git-icon">
-                <i class="uil uil-github"></i>
-              </a>
-            </div>
-          </div>
-          <!--==================== PORTFOLIO 3 ====================-->
-          <div class="portfolio__content grid swiper-slide">
-            <img src="assets/img/portfolio/3.jpg" alt="" class="portfolio__img">
-
-            <div class="portfolio__data">
-              <h3 class="portfolio__title">Rastreador de direcciones IP</h3>
-              <p class="portfolio__description">
-                Web realizada con diferentes API's
-                Tecnologias utilizadas: React, TailwindCSS.
-              </p>
-              <a href="https://carlos95hd.github.io/ip-address-tracker" target="_blank"
-               class="button button--flex button--small portfolio__button">
-                Demo
-                <i class="uil uil-arrow-right button__icon"></i>
-              </a>
-              <a href="https://github.com/Carlos95HD/ip-address-tracker" target="_blank" class="portfolio__git-icon">
-                <i class="uil uil-github"></i>
-              </a>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- arrow -->
-        <div class="swiper-button-next">
-          <i class="uil uil-angle-right swiper-portfolio-icon"></i>
-        </div>
-        <div class="swiper-button-prev">
-          <i class="uil uil-angle-left swiper-portfolio-icon"></i>
-        </div>
-        <!-- pagination -->
-        <div class="swiper-pagination"></div>
-      </div>
-    </section>
 
     <!--==================== CONTACT ME ====================-->
     <section class="contact section" id="contact">
@@ -766,9 +766,6 @@
 
   <!--==================== MAIN JS ====================-->
   <script src="assets/js/main.js" type="module"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/locale/es.min.js" integrity="sha512-L6Trpj0Q/FiqDMOD0FQ0dCzE0qYT2TFpxkIpXRSWlyPvaLNkGEMRuXoz6MC5PrtcbXtgDLAAI4VFtPvfYZXEtg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  
 </body>
 
 </html>
