@@ -31,28 +31,6 @@ function linkAction(){
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
-/*==================== ACCORDION SKILLS ====================*/
-// const skillsContent = document.getElementsByClassName('skills__content'),
-//       skillsHeader = document.querySelectorAll('.skills__header')
-
-// function toggleSkills() {
-//   let itemClass = this.parentNode.className
-
-//   for (let i = 0; i < skillsContent.length; i++) {
-//     skillsContent[i].className = 'skills__content skills__close'
-//   }
-
-//   if(itemClass === 'skills__content skills__close') {
-//     this.parentNode.className = 'skills__content skills__open'
-//   }
-// }
-// skillsHeader.forEach((el)=> {
-//   el.addEventListener('click', toggleSkills)
-// })
-
-// function capitalizeFirstLetter(string) {
-//   return string.charAt(0).toUpperCase() + string.slice(1);
-// }
 
 /*==================== SERVICES MODAL ====================*/
 const modalViews = document.querySelectorAll('.services__modal'),
@@ -77,37 +55,6 @@ modalCloses.forEach((modalClose) => {
   })
 })
 
-/*==================== PORTFOLIO SWIPER  ====================*/
-let swiperPortfolio = new Swiper(".porfolio__container", {
-  cssMode: true,
-  loop: true,
-
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-});
-
-/*==================== TESTIMONIAL ====================*/
-// let swiperTestimonial = new Swiper(".testimonial__container", {
-//   loop: true,
-//   grabCursor:true,
-//   spaceBetween:48,
-
-//   pagination: {
-//     el: ".swiper-pagination",
-//     clickable:true,
-//   },
-//   breakpoints:{
-//     568:{
-//       slidesPerView: 2,
-//     }
-//   },
-// });
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 const sections = document.querySelectorAll('section[id]')
 
@@ -321,7 +268,6 @@ function mostrarError(mensaje) {
   if ( errores.length === 0) {
       formulario.appendChild(mensajeError);
   }
-
 }
 
 const disabledBtn = () => {

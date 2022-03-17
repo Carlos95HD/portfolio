@@ -505,6 +505,122 @@ textarea{
   justify-content: center;
 }
 
+/*==================== PORTFOLIO ====================*/
+.portfolio__container{
+  overflow: initial;
+}
+
+.portfolio__content{
+  padding: 0 1.5rem;
+}
+
+.portfolio__img{
+  /* min-width: 265px; */
+  max-height: 176px;
+  border-radius: .5rem;
+  justify-self: center;
+}
+
+.portfolio__title{
+  font-size: var(--h3-font-size);
+  margin-bottom: var(--mb-0-5);
+}
+
+.portfolio__description{
+  margin-bottom: var(--mb-0-75)
+}
+
+.portfolio__button:hover .button__icon{
+  transform: translateX(.25rem)
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after{
+  content: '';
+}
+
+.swiper-portfolio-icon{
+  font-size: 2rem;
+  color: var(--first-color);
+}
+
+.swiper-button-prev{
+  left: -.5rem;
+}
+
+.swiper-button-next{
+  right: -.5rem;
+}
+
+.swiper-pagination-bullets{
+  position: initial;
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets{
+  bottom: -2.5rem;
+}
+
+.swiper-pagination-bullet-active{
+  background-color: var(--first-color);
+}
+
+.swiper-button-prev,
+.swiper-button-next,
+.swiper-pagination-bullet{
+  outline: none;
+}
+
+.portfolio__git-icon{
+  color: var(--first-color);
+  font-size: 2.25rem;
+  vertical-align: middle;
+  margin-left: var(--mb-0-5);
+  transition: .3s;
+}
+
+.portfolio__git-icon:hover {
+  color: var(--first-color-alt)
+}
+
+.portfolio__links{
+  display: inline-block;
+  margin-top: inherit;
+}
+
+/* New Styles Porfolio */
+.column {
+  float: left;
+  width: 33%;
+  padding: 0 10px 10px;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {
+  display:flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.card {
+  flex: 1 1 21rem;
+  flex-direction: column;
+  margin: 10px 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: .5rem;
+  align-self: normal;
+}
+
 /*==================== SKILLS ====================*/
 .skills__container{
   row-gap: 0;
@@ -684,82 +800,6 @@ textarea{
 
 .qualification__button.qualification__active{
   color: var(--first-color)
-}
-
-/*==================== PORTFOLIO ====================*/
-.portfolio__container{
-  overflow: initial;
-}
-
-.portfolio__content{
-  padding: 0 1.5rem;
-}
-
-.portfolio__img{
-  width: 265px;
-  border-radius: .5rem;
-  justify-self: center;
-}
-
-.portfolio__title{
-  font-size: var(--h3-font-size);
-  margin-bottom: var(--mb-0-5);
-}
-
-.portfolio__description{
-  margin-bottom: var(--mb-0-75)
-}
-
-.portfolio__button:hover .button__icon{
-  transform: translateX(.25rem)
-}
-
-.swiper-button-prev::after,
-.swiper-button-next::after{
-  content: '';
-}
-
-.swiper-portfolio-icon{
-  font-size: 2rem;
-  color: var(--first-color);
-}
-
-.swiper-button-prev{
-  left: -.5rem;
-}
-
-.swiper-button-next{
-  right: -.5rem;
-}
-
-.swiper-pagination-bullets{
-  position: initial;
-}
-
-.swiper-container-horizontal > .swiper-pagination-bullets{
-  bottom: -2.5rem;
-}
-
-.swiper-pagination-bullet-active{
-  background-color: var(--first-color);
-}
-
-.swiper-button-prev,
-.swiper-button-next,
-.swiper-pagination-bullet{
-  outline: none;
-}
-
-.portfolio__git-icon{
-  color: var(--first-color);
-  font-size: 2.25rem;
-  vertical-align: middle;
-  margin-left: var(--mb-0-5);
-  transition: .3s;
-}
-
-.portfolio__git-icon:hover {
-  color: var(--first-color-alt)
 }
 
 /*==================== CONTACT ME ====================*/
@@ -1117,6 +1157,15 @@ select:-webkit-autofill:focus {
     display: grid;
     grid-template-columns: .6fr;
     justify-content: center;
+  }
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
   }
 }
 
