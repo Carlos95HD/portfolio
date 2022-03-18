@@ -613,7 +613,7 @@ textarea{
 .card {
   flex: 1 1 21rem;
   flex-direction: column;
-  margin: 10px 20px;
+  margin: 15px 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
   padding: 10px 20px;
   text-align: center;
@@ -1170,16 +1170,22 @@ select:-webkit-autofill:focus {
 }
 
 @media screen and (max-width: 630px){
-  .skills__wrapper {
-    grid-template-columns: auto;
-  }
 
   .language__logo-img{
     width: 30%;
-    /* filter: grayscale(100%); */
-    /* transition: all 500ms; */
   }
 
+  .skills__header{
+    justify-content: start;
+  }
+
+  .skills__list{
+    padding-left: 0;
+  }
+
+  .skills__wrapper {
+    grid-template-columns: auto;
+  }
 
 }
 
