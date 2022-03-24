@@ -92,31 +92,21 @@
               <i class="uil uil-linkedin"></i>
             </a>
 
-            <!-- <a href="https://www.facebook.com/" target="_blank" class="home__social-icon"> -->
-              <!-- <i class="uil uil-facebook-f"></i> -->
-            <!-- </a> -->
-
             <a href="https://github.com/Carlos95HD" target="_blank" class="home__social-icon">
               <i class="uil uil-github"></i>
             </a>
           </div>
 
           <div class="home__img">
-            <svg class="home__blob" viewBox="0 0 200 187" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <mask id="mask0" mask-type="alpha">
-                            <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 
-                            130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 
-                            97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 
-                            0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"/>
-                        </mask>
-                        <g mask="url(#mask0)">
-                            <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 
-                            165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 
-                            129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
-                            -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"/>
-                            <image class="home__blob-img" x='0' y='15' href="assets/img/profile.png"/>
-                        </g>
-                    </svg>
+             <svg class="home__blob" viewBox="0 0 200 187" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+               <mask id="mask0" mask-type="alpha">
+                <path d="M63.5,-50.4C78.4,-32,84,-5.8,78.4,17.7C72.9,41.1,56.3,61.7,34.8,72C13.3,82.3,-13.1,82.1,-34.4,71.8C-55.8,61.4,-72,40.8,-77.9,17.1C-83.8,-6.5,-79.4,-33.1,-64.7,-51.6C-50,-70,-25,-80.2,-0.3,-80C24.3,-79.7,48.6,-68.9,63.5,-50.4Z" transform="translate(100 100)" />
+              </mask>
+              <g mask="url(#mask0)">
+                <path d="M63.5,-50.4C78.4,-32,84,-5.8,78.4,17.7C72.9,41.1,56.3,61.7,34.8,72C13.3,82.3,-13.1,82.1,-34.4,71.8C-55.8,61.4,-72,40.8,-77.9,17.1C-83.8,-6.5,-79.4,-33.1,-64.7,-51.6C-50,-70,-25,-80.2,-0.3,-80C24.3,-79.7,48.6,-68.9,63.5,-50.4Z" transform="translate(100 100)" />
+                <image class="home__blob-img" x='10' y='30' href="assets/img/profile.png"/>
+            </g>
+            </svg>
           </div>
 
           <div class="home__data">
@@ -152,7 +142,7 @@
         <div class="about__data">
           <p class="about__description">
             Aprendiendo constantemente tecnologías relacionadas con la programación y el desarrollo web, 
-            me especializo actualmente en el desarrollo Frontend.
+            actualmente me especializo en el desarrollo Frontend en React.
           </p>
 
           <!-- <div class="about__buttons">
@@ -175,14 +165,15 @@
       <div class="porfolio__container container">
 
         <div class="row">
+          <!-- Top 4 -->
           <div class="card">
               <img src="assets/img/portfolio/countries-app.jpg" alt="countries-app" class="portfolio__img">
 
               <div class="portfolio__data">
                 <h3 class="portfolio__title">Countries - App</h3>
                 <p class="portfolio__description">
-                  Web realizada con la api Rest-Countries v3
-                  Tecnologias utilizadas: React, TailwindCSS.
+                  Web realizada con API Rest-Countries<br>
+                  Tecnologias utilizadas: React, Formik, Axios, React-Router-Dom, TailwindCSS.
                 </p>
               </div>
 
@@ -195,6 +186,29 @@
                <a href="https://github.com/Carlos95HD/react-countries-app" target="_blank" class="portfolio__git-icon">
                  <i class="uil uil-github"></i>
                </a>
+              </div>
+          </div>
+
+          <div class="card">
+              <img src="assets/img/portfolio/challenge-alkemy.jpg" alt="countries-app" class="portfolio__img">
+
+              <div class="portfolio__data">
+                <h3 class="portfolio__title">Menu - App</h3>
+                <p class="portfolio__description">
+                  Challenge de Alkemy con utilización de spoonacular API <br>
+                  Tecnologias utilizadas: React, Redux, Axios, Formik, Jest, React-Router-Dom, Bootstrap.
+                </p>
+              </div>
+
+              <div class="portfolio__links">
+                <a href="https://challenge-alkemy-demo-carlos95hd.vercel.app/login" target="_blank"
+                class="button button--flex button--small portfolio__button">
+                Demo
+                <i class="uil uil-arrow-right button__icon"></i>
+              </a>
+              <a href="https://github.com/Carlos95HD/challenge-react-alkemy" target="_blank" class="portfolio__git-icon">
+                <i class="uil uil-github"></i>
+              </a>
               </div>
           </div>
 
@@ -241,9 +255,20 @@
               </div>
           </div>
 
-          <div class="card">
-              <img src="assets/img/portfolio/1.jpg" alt="" class="portfolio__img img-w">
+          <!-- <div class="column">
+            <div class="card"></div>
+          </div> -->
+        </div>
 
+        <!-- More Projects... -->
+        <div>
+          <a class="collapsible" >
+            Ver más <i class="uil uil-plus-circle collapsible__icon"></i>
+          </a>
+          <div class='content__collapsible'>
+            <div class="card">
+              <img src="assets/img/portfolio/1.jpg" alt="" class="portfolio__img img-w">
+              
               <div class="portfolio__data">
                 <h3 class="portfolio__title">Consulta de Clima Actual</h3>
                 <p class="portfolio__description">
@@ -251,23 +276,23 @@
                   Tecnologias utililzadas: TailwindCSS, JavaScript.
                 </p>
               </div>
-
-                <div class="portfolio__links">
-                  <a href="https://clima-deasi.netlify.app/" target="_blank"
-                    class="button button--flex button--small portfolio__button">
-                    Demo
-                    <i class="uil uil-arrow-right button__icon"></i>
-                  </a>
-                  <a href="https://github.com/Carlos95HD/weather-project" target="_blank" class="portfolio__git-icon">
-                    <i class="uil uil-github"></i>
-                  </a>
-                </div>
+  
+              <div class="portfolio__links">
+                <a href="https://clima-deasi.netlify.app/" target="_blank"
+                  class="button button--flex button--small portfolio__button">
+                  Demo
+                  <i class="uil uil-arrow-right button__icon"></i>
+                </a>
+                <a href="https://github.com/Carlos95HD/weather-project" target="_blank" class="portfolio__git-icon">
+                  <i class="uil uil-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
 
-          <!-- <div class="column">
-            <div class="card"></div>
-          </div> -->
-        </div>
+
+
       </div>
     </section>
 

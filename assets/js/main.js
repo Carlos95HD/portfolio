@@ -32,6 +32,26 @@ function linkAction(){
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
 
+/*==================== CARD COLLAPSE ====================*/
+let coll = document.getElementsByClassName("collapsible");
+let i;
+
+for (i = 0; i < coll.length; i++) {
+
+  coll[i].addEventListener("click", function () {
+    this.classList.toggle("active");
+    let content = this.nextElementSibling;
+    if (content.style.display === "grid") {
+      coll[0].innerHTML =
+        'Ver más <i class="uil uil-plus-circle collapsible__icon"></i>';
+      content.style.display = "none";
+    } else {
+      coll[0].innerHTML = `Ocultar <i class="uil uil-times-circle collapsible__icon"></i>`;
+      content.style.display = "grid";
+    }
+  });
+}
+
 /*==================== SERVICES MODAL ====================*/
 const modalViews = document.querySelectorAll('.services__modal'),
       modalBtns = document.querySelectorAll('.services__button'),

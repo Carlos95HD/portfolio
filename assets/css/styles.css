@@ -339,7 +339,7 @@ textarea{
 }
 
 .home__blob-img{
-  width: 190px;
+  width: 167px;
 }
 
 .home__data{
@@ -514,6 +514,10 @@ textarea{
   padding: 0 1.5rem;
 }
 
+.portfolio__data{
+  margin-top: 15px;
+}
+
 .portfolio__img{
   /* min-width: 265px; */
   max-height: 176px;
@@ -583,8 +587,7 @@ textarea{
 }
 
 .portfolio__links{
-  display: inline-block;
-  margin-top: inherit;
+  margin-top: auto;
 }
 
 /* New Styles Porfolio */
@@ -611,15 +614,56 @@ textarea{
 
 /* Style the counter cards */
 .card {
+  display: block;
   flex: 1 1 21rem;
   flex-direction: column;
   margin: 15px 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 25%); /* this adds the "card" effect */
   padding: 10px 20px;
   text-align: center;
   border-radius: .5rem;
   align-self: normal;
 }
+
+/*-------- collapse ------------ */
+.collapsible{
+  display: grid;
+  grid: 1fr 1fr;
+  cursor: default;
+  margin: 0px auto;
+  text-align: center;
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+  transition: all 600ms ease-out;
+  width: fit-content;
+}
+
+.collapsible i{
+  cursor: pointer;
+}
+
+.collapsible i:hover{
+  transform: rotate(90deg);
+  color: var(--first-color);
+}
+
+.collapsible__icon{
+  font-size: 1.25rem;
+  transition: .3s;
+}
+
+/* .active{ */
+/*  */
+/* } */
+
+.content__collapsible {
+  display: none;
+  grid-template-columns: 1fr;
+  animation-name: rotate-icon;
+  transition: all 500ms ease;
+}
+
+/*-------- end collapse ------------ */
 
 /*==================== SKILLS ====================*/
 .skills__container{
@@ -1249,7 +1293,7 @@ select:-webkit-autofill:focus {
     column-gap: 2rem;
   }
   .home__blob{
-    width: 190px;
+    width: 255px;
   }
   .home__scroll{
     display: block;
@@ -1346,6 +1390,17 @@ select:-webkit-autofill:focus {
   }
   .footer__copy{
     margin-top: 4.5rem;
+  }
+}
+
+@media screen and (min-width: 784px){
+  .card{
+    display: flex;
+  }
+
+  .content__collapsible {
+    display: none;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
