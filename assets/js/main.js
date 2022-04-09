@@ -191,7 +191,7 @@ if (isTouchDevice()!==false) {
 /*==================== FORM VALIDATION ====================*/
 const btnEnviar = document.querySelector("#enviar");
 const formulario = document.querySelector("#send-mail");
-//Variables para campos
+
 const email = document.querySelector("#email");
 const nombre = document.querySelector("#name");
 const mensaje = document.querySelector("#message");
@@ -220,7 +220,7 @@ let validFormulario = false;
 
 function validarFormulario(e) {
   if (e.target.value.length > 0) {
-      //quitando errores
+
       const error = document.querySelector('p.error');
       if ( error ) {
           error.remove();
