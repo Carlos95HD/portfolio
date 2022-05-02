@@ -520,7 +520,7 @@ textarea{
 
 .portfolio__img{
   /* min-width: 265px; */
-  max-height: 176px;
+  /* max-height: 176px; */
   border-radius: .5rem;
   justify-self: center;
 }
