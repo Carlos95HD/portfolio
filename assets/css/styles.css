@@ -625,6 +625,25 @@ textarea{
   align-self: normal;
 }
 
+.new__element{
+  display: flex;
+  gap: 4px;
+  text-align: center;
+  justify-content: center;
+}
+
+.new__element span{
+  font-size: var(--small-font-size);
+  color: #FFF;
+  background-color: green;
+  height: fit-content;
+  border: 1px solid #FFF;
+  border-radius: 7px;
+  padding: 0px 4px 0px 4px;
+  align-self: center;
+  margin-bottom: var(--mb-0-5);
+}
+
 /*-------- collapse ------------ */
 .collapsible{
   display: grid;
