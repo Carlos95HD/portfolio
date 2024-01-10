@@ -1414,9 +1414,9 @@ select:-webkit-autofill:focus {
 }
 
 @media screen and (min-width: 784px){
-  .card{
+  /* .card{
     display: flex;
-  }
+  } */
 
   .content__collapsible {
     display: none;
